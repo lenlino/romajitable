@@ -1,6 +1,6 @@
 
 class RomajiWord:
-    
+
     __slots__ = ("hiragana", "katakana")
 
     def __init__(self, hiragana, katakana):
@@ -2133,13 +2133,13 @@ for i in romajitable:
     if maxlen < len(i[0]):
         maxlen = len(i[0])
 
-def substring(l, ids, ide):
+async def substring(l, ids, ide):
     try:
         return l[ids:ide]
     except IndexError:
         return None
 
-def to_kana(word):
+async def to_kana(word):
     romaji = word.lower()
     hiragana = ""
     katakana = ""
@@ -2148,7 +2148,7 @@ def to_kana(word):
         length = maxlen
         if len(romaji)-pos<length:
             length = len(romaji)-pos
-        
+
         found = False
         while(length > 0 and not found):
             lol_str = substring(romaji, pos, pos+length)
