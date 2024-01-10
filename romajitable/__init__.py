@@ -2151,7 +2151,7 @@ async def to_kana(word):
 
         found = False
         while(length > 0 and not found):
-            lol_str = substring(romaji, pos, pos+length)
+            lol_str = await substring(romaji, pos, pos+length)
             obj = hashd.get(lol_str, None)
             if obj:
                 hiragana+=obj['hiragana']
